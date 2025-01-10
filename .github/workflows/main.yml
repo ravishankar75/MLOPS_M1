@@ -45,6 +45,7 @@ jobs:
 
   test:
     name: Test Model
+    needs: train 
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -60,6 +61,7 @@ jobs:
 
   deploy:
     name: Deploy Model
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
